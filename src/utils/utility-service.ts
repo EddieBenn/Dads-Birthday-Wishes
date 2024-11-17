@@ -11,16 +11,26 @@ class UtilityService {
         from: process.env.GMAIL_USER,
         to: email,
         subject: 'Thank You For Wishing Daddy a Happy Birthday',
-        html: `<div width="50%" style="text-align: center; padding: 10px; border-radius: 5px; border: 2px solid gold;">
-                  <h1>Welcome to Torre<h1>
-                  <h3 style="font-size: 20px">We appreciate you for taking out time to wish our father a happy birthday. May God bless you.</h3>
-                  <p style="font-size: 20px">Thank You <img src='../images/thumbs up.gif' alt='thumbs up' /></p>
-                  <p style="font-size: 20px">The Ndaobong Family</p>
-                  </div>`,
+        html: `
+        <div style="width: 60%; margin: 0 auto; text-align: center; padding: 20px; border-radius: 10px; border: 2px solid gold; background-color: #fffaf0; font-family: Arial, sans-serif;">
+          <h3 style="font-size: 24px; color: #d2691e; margin-bottom: 10px;">We Appreciate You!</h3>
+          <p style="font-size: 18px; color: #8b4513; margin: 10px 0;">
+            Thank you for taking the time to wish our father a happy birthday. Your thoughtful message means so much to us.
+          </p>
+          <img 
+            src="https://res.cloudinary.com/dixoaggbe/image/upload/v1731841849/thumbs_up_gif.gif" 
+            alt="Thumbs up" 
+            style="width: 100px; height: auto; margin: 20px 0;" />
+          <p style="font-size: 18px; color: #2e8b57; margin: 10px 0;">
+            With gratitude,<br />
+            <strong style="color: #ff4500;">The Ndaobong Family</strong>
+          </p>
+        </div>
+        `,
       });
       return response;
     } catch (err) {
-      console.log(err);
+      console.error('Error sending email:', err);
     }
   };
 

@@ -19,7 +19,7 @@ export class UsersService {
     const emailExist = await this.usersRepository.exists({ where: { email } });
     if (emailExist) {
       throw new HttpException(
-        `user with email: ${email} already exists`,
+        `email: ${email} already exists`,
         HttpStatus.CONFLICT,
       );
     }

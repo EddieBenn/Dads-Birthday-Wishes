@@ -33,9 +33,8 @@ export class UsersController {
   @ApiOperation({ summary: 'Create User' })
   @ApiBody({ type: CreateUserDto })
   @ApiCreatedResponse({ type: CreateUserDto })
-  @ApiResponse({ status: 422, description: 'User with email already exist' })
+  @ApiResponse({ status: 422, description: 'Email already exist' })
   @ApiForbiddenResponse({ description: 'Permission denied' })
-  @ApiNotFoundResponse({ description: 'No agent found in this city' })
   @Post()
   async createUser(@Body() body: CreateUserDto) {
     try {

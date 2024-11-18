@@ -34,7 +34,7 @@ export class UsersService {
 
   async getAllUsers(queryParams: UserFilter) {
     const page = queryParams?.page ? Number(queryParams?.page) : 1;
-    const size = queryParams?.size ? Number(queryParams.size) : 10;
+    const size = queryParams?.size ? Number(queryParams.size) : 6;
     const skip = queryParams?.page ? (Number(queryParams.page) - 1) * size : 0;
     const query = await buildUserFilter(queryParams);
     const [users, count] = await this.usersRepository.findAndCount({
